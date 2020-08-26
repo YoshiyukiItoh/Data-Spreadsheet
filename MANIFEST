@@ -1,0 +1,7 @@
+Changes
+lib/Data/Spreadsheet.pm
+Makefile.PL
+MANIFEST
+ppport.h
+README
+t/Data-Spreadsheet.t

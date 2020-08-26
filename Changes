@@ -1,0 +1,6 @@
+Revision history for Perl extension Data::Spreadsheet.
+
+0.01  Wed Aug 26 12:50:06 2020
+	- original version; created by h2xs 1.23 with options
+		-A -n Data::Spreadsheet
+
