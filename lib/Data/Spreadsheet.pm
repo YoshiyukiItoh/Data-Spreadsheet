@@ -21,13 +21,32 @@ our %EXPORT_TAGS = ( 'all' => [ qw(
 
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
-our @EXPORT = qw(
-	
-);
+our @EXPORT = qw(new parse_file_sep);
 
 our $VERSION = '0.01';
 
 # Preloaded methods go here.
+sub new {
+  my $class = shift;
+  my $self = {};
+  return bless $self, $class;
+}
+
+sub parse_file_sep {
+  my ($self, $file, $sep) = @_;
+  my $data_ref = [];
+
+  open my $fh, '<', $file
+    or die "Can't open file $file: $!";
+
+  while (my $line = <$fh>) {
+    chomp $line;
+    my @elements = split(/\s*$sep\s*/, $line);
+    push(@$data_ref, \@elements);
+  }
+
+  $self->{data} = $data_ref;
+}
 
 1;
 __END__
