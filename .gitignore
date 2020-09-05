@@ -1,0 +1,15 @@
+.*
+*~
+!.gitignore
+!.gitattributes
+/blib
+/pm_to_blib
+/Makefile
+/Makefile.old
+/MANIFEST*
+!MANIFEST
+!MANIFEST.SKIP
+/META.*
+/MYMETA.*
+Data-Spreadsheet-*
+/cover_db
