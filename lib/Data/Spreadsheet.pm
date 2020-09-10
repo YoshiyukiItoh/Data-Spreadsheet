@@ -41,8 +41,14 @@ sub parse_file_sep {
 
   while (my $line = <$fh>) {
     chomp $line;
-    my @elements = split(/\s*$sep\s*/, $line);
-    push(@$data_ref, \@elements);
+    my @elements = split(/$sep/, $line);
+    for (my $i = 0; $i <= $#elements; $i++) {
+      if ( ref($data_ref->[$i]) eq 'ARRAY') {
+        push(@{$data_ref->[$i]}, $elements[$i])
+      } else {
+        push(@$data_ref, [$elements[$i]])
+      }
+    }
   }
 
   $self->{data} = $data_ref;
