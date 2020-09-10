@@ -5,3 +5,5 @@ MANIFEST
 ppport.h
 README
 t/Data-Spreadsheet.t
+t/test.t
+t/input1.csv
